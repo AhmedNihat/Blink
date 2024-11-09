@@ -1,0 +1,786 @@
+/* Existing styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    color: white;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+#header {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    padding: 10px 10%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Base style for logo */
+.logo {
+    width: 150px; /* Set the logo size */
+    position: relative; /* To position shine effect */
+    animation: shimmer 3s ease-in-out infinite, pulse 2s ease-in-out infinite; /* Combined shimmer and pulse animations */
+}
+
+/* Shimmer effect (light movement across the logo) */
+@keyframes shimmer {
+    0% {
+        filter: brightness(1) contrast(1); /* Normal brightness */
+    }
+    50% {
+        filter: brightness(1.5) contrast(1.2); /* Increase brightness and contrast for a shine */
+    }
+    100% {
+        filter: brightness(1) contrast(1); /* Return to normal */
+    }
+}
+
+/* Subtle pulse (enlarging and shrinking the logo slightly for dynamic effect) */
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Normal size */
+    }
+    50% {
+        transform: scale(1.05); /* Slightly larger size */
+    }
+    100% {
+        transform: scale(1); /* Back to normal size */
+    }
+}
+
+/* Shine effect using a gradient overlay */
+@keyframes glossy-shine {
+    0% {
+        background-position: -200%;
+    }
+    50% {
+        background-position: 200%;
+    }
+    100% {
+        background-position: -200%;
+    }
+}
+
+/* Applying shine using pseudo-element */
+.logo::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    animation: glossy-shine 2s linear infinite;
+    pointer-events: none; /* Avoid interfering with other elements */
+    z-index: 1; /* Place it above the logo */
+    opacity: 0.5; /* Semi-transparent shine */
+}
+
+
+/* Style for navigation buttons */
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 12px 15px;
+    position: relative;
+    overflow: hidden; /* Ensures the sliding borders don't extend outside the element */
+}
+
+nav ul li a {
+    color: #ff0000;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+nav ul li a i {
+    color: white; /* Set icon color to white */
+    margin-right: 8px; /* Space between icon and text */
+    font-size: 22px; /* Icon size */
+}
+
+/* Create four sliding borders using pseudo-elements */
+nav ul li::before, nav ul li::after,
+nav ul li a::before, nav ul li a::after {
+    content: '';
+    position: absolute;
+    background-color: #ff0000; /* Border color */
+    transition: transform 0.3s ease; /* Smooth slide-in effect */
+}
+
+/* Positioning for each side of the border */
+nav ul li::before { /* Top border */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0); /* Start hidden */
+    transform-origin: left;
+}
+
+nav ul li::after { /* Bottom border */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+nav ul li a::before { /* Left border */
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+nav ul li a::after { /* Right border */
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: bottom;
+}
+
+/* Hover effect to "slide in" the borders */
+nav ul li:hover::before,
+nav ul li:hover::after,
+nav ul li a:hover::before,
+nav ul li a:hover::after {
+    transform: scaleX(1) scaleY(1); /* Expands each border */
+}
+
+/* Shimmer Animation */
+@keyframes light-sweep {
+    0% {
+        background-position: -150%;
+    }
+    50% {
+        background-position: 150%;
+    }
+    100% {
+        background-position: -150%;
+    }
+}
+
+/* Glitter effect */
+.glitter-text {
+    color: #FFD700; /* Base gold color */
+    position: relative;
+    font-weight: bold;
+    background: linear-gradient(120deg, #FFD700, #ffffff, #FFD700);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: light-sweep 3s ease-in-out infinite;
+    overflow: hidden;
+}
+
+/* Sparkle Pseudo-elements */
+.glitter-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 10%);
+    background-size: 10px 10px;
+    opacity: 0.6;
+    animation: sparkle-flicker 2s linear infinite;
+    pointer-events: none;
+    mix-blend-mode: overlay; /* Blend to give realistic sparkle */
+}
+
+/* Sparkle flicker effect */
+@keyframes sparkle-flicker {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 0.9; }
+}
+
+
+
+
+#header-text {
+    margin-top: 20%;
+    font-size: 30px;
+}
+
+#header-text h1 {
+    font-size: 48px;
+    margin-top: 20px;
+}
+
+#header-text h1 span {
+    color: #ff0000;
+}
+
+/* Typewriter effect */
+.typewriter-text {
+    display: inline-flex; /* Ensures text stays on the same line */
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 2s steps(12), forwards;
+   
+}
+#header-text h1 .typewriter-text {
+    color: #ff0000 !important;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.blink-caret {
+    animation: blink-caret 0.75s step-end infinite;
+    color: rgb(0, 255, 98); /* Match the color of "Data Science" */
+}
+
+
+
+/* Typing effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 12ch; } /* Adjust based on text length */
+}
+
+/* Blinking caret effect for exclamation mark */
+@keyframes blink-caret {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/*----about-----*/
+
+#about{
+
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    padding: 80px 0;
+    color: #ababab;
+
+}
+/* Container for the photo and glow effect */
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1 {
+    position: relative;
+    display: inline-block;
+    width: 30%; /* Reduced container width to make the photo area smaller */
+}
+
+/* Photo styling */
+.user-photo {
+    display: block;
+    width: 100%; /* Make the photo smaller within the container */
+    margin: 0 auto; /* Center the photo horizontally */
+    border-radius: 50px;
+    position: relative;
+    z-index: 1;
+    border: 4px solid transparent; 
+}
+
+/* Neon glow border animation */
+.about-col-1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    z-index: -1;
+    border: 3px solid red; /* Slightly smaller border to match reduced photo size */
+    box-shadow: 0 0 10px 4px rgba(255, 0, 0, 0.6),
+                0 0 20px 8px rgba(255, 0, 0, 0.4),
+                0 0 30px 12px rgba(255, 0, 0, 0.2);
+    animation: neon-pulse 2s infinite alternate;
+}
+
+/* Animation for pulsing effect */
+@keyframes neon-pulse {
+    0% {
+        box-shadow: 0 0 5px 2px rgba(255, 0, 0, 0.4), 
+                    0 0 10px 5px rgba(255, 0, 0, 0.2), 
+                    0 0 15px 10px rgba(255, 0, 0, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.6), 
+                    0 0 30px 15px rgba(255, 0, 0, 0.4), 
+                    0 0 45px 25px rgba(255, 0, 0, 0.2);
+    }
+}
+
+/* Optional: Additional styling for the image */
+.about-col-1 img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+.about-col-2{
+    flex-basis: 60%;
+}
+.subtitle{
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+}
+.tab-title{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 4px;
+    background: #ff0000;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+    width: 50%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+
+}
+
+.tab-contents ul li span{
+    color: #ff0000;
+    font-size: 14px;
+
+}
+
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+
+/* Servies section */
+
+#services{
+    padding: 30px 0;
+
+}
+
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px
+}
+
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s
+}
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+
+}
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+
+}
+.services-list div a{
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+
+}
+.services-list div:hover{
+    background: #ff004f;
+    transform: translateY(-10px);
+}
+
+/*  portfolio */
+#portfolio{
+    padding: 50px 0;
+}
+
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+
+}
+
+.layer a{
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #ffffff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+
+}
+
+.work:hover img{
+    transform: scale(1.1);
+
+}
+
+.work:hover .layer{
+    height: 100%;
+}
+
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    padding: 14px 50px;
+    border: 1px solid #ff004f;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #ff004f;
+}
+
+/* Contact Section */
+#contact {
+    width: 100%;
+    padding: 50px 0;
+    background: #0a0a0a;
+    color: #fff;
+}
+
+/* Contact Me Title */
+.sub-title {
+    text-align: center;
+    font-size: 36px;
+    color: #ff0000; /* Red glow color */
+    margin-bottom: 60px; /* Increased space below the title */
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Contact Info */
+.contact-info {
+    margin-bottom: 40px; /* Space below the contact info */
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin: 15px 0; /* Increased margin between each contact info element */
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #ff0000;
+}
+
+/* Social Icons Container */
+.social-icons {
+    display: flex;
+    gap: 15px; /* Space between icons */
+    margin-top: 20px; /* Space above the social icons */
+}
+
+/* Social Icons - Base Style */
+.social-icons a {
+    font-size: 24px; /* Icon size */
+    color: #766161;     /* Default color */
+    text-decoration: none;
+    transition: transform 0.8s ease, color 0.3s ease; /* Smooth animation */
+}
+
+/* Hover Effect - Zoom and Color Change */
+.social-icons a:hover {
+    color: #ff5733;        /* Change color on hover (adjust as needed) */
+    transform: scale(2.3); /* Zoom effect on hover */
+}
+
+/* Contact Form */
+.contact-form form input, 
+.contact-form form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.contact-form form input:focus, 
+.contact-form form textarea:focus {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+
+.contact-form form button {
+    width: 100%;
+    padding: 10px;
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+.contact-form form button:hover {
+    background:#a81212;
+    box-shadow: 0 0 35px rgba(255, 0, 0, 0.9);
+}
+
+
+/* Download CV Button */
+.download-cv-btn {
+    display: inline-block;
+    width: 200px; /* Set button width */
+    margin: 20px auto 0; /* Center it with margin */
+    padding: 10px;
+    background: #ff0000;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.download-cv-btn:hover {
+    background: #a81212;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.9);
+}
+.copywrite{
+    width: 90%;
+    text-align: center;
+    padding: 20px; 0;
+    background-color: #262626;
+    font-weight: 300;
+    margin-top: 100px;
+}
+/*resopnsive*/
+//* Mobile View - Media Queries */
+@media (max-width: 1024px) {
+    /* For tablets and smaller screens */
+    #navList {
+        display: flex;
+        justify-content: center; /* Center the items horizontally */
+        align-items: center;
+        flex-wrap: wrap; /* Wrap the items if necessary */
+        padding: 0; /* Remove any padding */
+        margin: 0;
+    }
+
+    #navList li {
+        margin: 0 15px; /* Add space between the list items */
+        list-style: none; /* Remove list item bullet */
+    }
+
+    /* Make header text smaller on smaller screens */
+    #header-text h1 {
+        font-size: 36px;
+    }
+
+    .glitter-text {
+        font-size: 48px;
+    }
+
+    /* For smaller screens (Mobile devices) */
+    @media (max-width: 768px) {
+        #navList {
+            display: flex;
+            flex-direction: row; /* Align items horizontally */
+            justify-content: center; /* Center items */
+            padding: 20px;
+            background-color: #333;
+        }
+
+        #navList li {
+            margin: 0 10px; /* Reduce margin for smaller screens */
+        }
+
+        .logo {
+            width: 120px; /* Adjust logo size */
+        }
+
+        /* Adjust header text for mobile */
+        #header-text h1 {
+            font-size: 32px;
+        }
+
+        .glitter-text {
+            font-size: 40px;
+        }
+        
+
+        /* Adjust layout for .about and other sections */
+        .about-col-1, .about-col-2 {
+            width: 100%; /* Stack columns on small screens */
+            margin-bottom: 20px;
+        }
+
+        .row {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .services-list, .work-list {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust grid layout */
+        }
+
+        .contact-content {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Ensure buttons and form inputs are properly sized */
+        .btn, .download-cv-btn, .contact-form form input, .contact-form form textarea {
+            width: 100%;
+        }
+
+        .social-icons a {
+            font-size: 30px; /* Adjust icon size for mobile */
+        }
+    }
+
+    /* Further tweaks for very small devices (max-width: 480px) */
+    @media (max-width: 480px) {
+        .logo {
+            width: 100px; /* Even smaller logo */
+        }
+
+        #header-text h1 {
+            font-size: 28px; /* Smaller header text */
+        }
+
+        .glitter-text {
+            font-size: 32px; /* Smaller glitter text */
+        }
+
+        .tab-links {
+            font-size: 16px;
+        }
+
+        .about-col-1, .about-col-2 {
+            width: 100%; /* Stack about sections */
+        }
+
+        .services-list, .work-list {
+            grid-template-columns: 1fr; /* Stack services and portfolio items */
+        }
+
+        .contact-info {
+            font-size: 16px; /* Adjust contact info text size */
+        }
+
+        .tab-contents ul li span {
+            font-size: 12px; /* Adjust text inside tabs */
+        }
+
+        .contact-form form input, .contact-form form textarea {
+            font-size: 14px;
+        }
+
+        .download-cv-btn {
+            width: 180px; /* Adjust CV download button */
+        }
+
+        .social-icons a {
+            font-size: 24px; /* Adjust social icons size */
+        }
+    }
+}

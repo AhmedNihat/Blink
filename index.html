@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Ullah's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c28ea35cac.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+     <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo1.png" class="logo" alt="Logo">
+                <ul>
+                    <li><a href="#header"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
+                    <li><a href="#services"><i class="fa-solid fa-gear"></i> Services</a></li>
+                    <li><a href="#portfolio"><i class="fas fa-briefcase"></i> My Works</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    
+                </ul>
+            </nav>
+            <div id="header-text">
+                <p class="glitter-text" style ="font-family: 'Tangerine', cursive; font-size: 60px; color: #DAA520;">Assalamualaikum!</p>
+                <h1>
+                    I’m <span>Ahmed Ullah</span><br>
+                    Passionate about <span class="typewriter-text">Data Science</span><span class="blink-caret">!</span>
+                </h1>
+            </div>
+        </div>
+     </div>
+
+     <!-- About Section -->
+     <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png" alt="User Image" class="user-photo">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="subtitle">About Me</h1>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    
+                    <div class="tab-title">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Data Science</span><br>Machine Learning, Python, SQL</li>
+                            <li><span>Frontend Development</span><br>HTML, CSS, JavaScript</li>
+                            <li><span>App Development</span><br>Building Android APKs</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li style="font-size: large;"><span><b>No Experience</b></span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>SSC (2017)</span><br>Sermon School & College</li>
+                            <li><span>HSC (2019)</span><br>CSBH: College of Science, Business & Humanity</li>
+                            <li><span>BSc in CSE (2020-2025)</span><br>Premier University, Chattogram</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+
+     <!-- Services --> 
+
+     <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>Blah Blah Blah Blah</p>
+                    <a href="">Learn More</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-database"></i>
+                    <h2>Data Science</h2>
+                    <p>Blah Blah Blah Blah</p>
+                    <a href="">Learn More</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-mobile"></i>
+                    <h2>Apps Development</h2>
+                    <p>Blah Blah Blah Blah</p>
+                    <a href="">Learn More</a>
+                </div>
+            </div>
+        </div>
+     </div>
+
+     <!-- Portfolio -->
+      <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Works</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work-1.png" alt="">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>The App conncts you to the talented people around the world</p>
+                        <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-2.png" alt="">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>The App conncts you to the talented people around the world</p>
+                        <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-3.png" alt="">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>The App conncts you to the talented people around the world</p>
+                        <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See More</a>
+        </div>
+      </div>
+
+<!--Contact Section-->
+<div id="contact">
+    <div class="container">
+        <h1 class="sub-title">Contact Me</h1>
+        <div class="contact-content">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <p><i class="fa-solid fa-paper-plane"></i> ahmedullahnihat@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> +8801636-125691</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <!-- Download CV Button -->
+                 <a href="path-to-your-cv.pdf" class="download-cv-btn" download>Download CV</a>
+            </div>
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <form action="#">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+        <div class="copywrite">
+            <p>2024 @AhmedUlah. All rights reserved. Thank You!</p>
+        </div>
+    </div>
+    
+</div>
+
+
+     <script>
+         var tablinks = document.getElementsByClassName("tab-links");
+         var tabcontents = document.getElementsByClassName("tab-contents");
+         function opentab(tabname) {
+             for (tablink of tablinks) {
+                 tablink.classList.remove("active-link");
+             }
+             for (tabcontent of tabcontents) {
+                 tabcontent.classList.remove("active-tab");
+             }
+             event.currentTarget.classList.add("active-link");
+             document.getElementById(tabname).classList.add("active-tab");
+         }
+     </script>
+</body>
+</html>
