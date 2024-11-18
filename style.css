@@ -233,6 +233,7 @@ nav ul li a:hover::after {
 #header-text h1 {
     font-size: 48px;
     margin-top: 20px;
+    color: white;
 }
 
 #header-text h1 span {
@@ -270,6 +271,119 @@ nav ul li a:hover::after {
     from, to { opacity: 1; }
     50% { opacity: 0; }
 }
+
+/* Container for the buttons */
+.button-container {
+    display: flex;
+    gap: 30px; /* Spacing between buttons */
+    align-items: center; /* Vertically align buttons */
+    margin-top: 30px; /* Top margin for proper spacing */
+}
+
+/* Ready to Collaborate Button */
+.ready-collaborate-btn {
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(90deg, #ff0000, #cc0000);
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 15px rgba(255, 0, 0, 0.3);
+}
+
+/* Adding glow effect to Ready to Collaborate button */
+.ready-collaborate-btn::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, #ff0000, #cc0000, #ff4040, #ff0000);
+    filter: blur(10px);
+    z-index: -1;
+    border-radius: 15px;
+    opacity: 0.8;
+    animation: glow 3s infinite alternate;
+}
+
+/* Hover effect for the Ready to Collaborate button */
+.ready-collaborate-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 30px rgba(255, 0, 0, 0.6);
+}
+
+/* Glow animation */
+@keyframes glow {
+    0% {
+        filter: blur(5px);
+        opacity: 0.6;
+    }
+    100% {
+        filter: blur(15px);
+        opacity: 1;
+    }
+}
+
+/* Active effect when button is clicked */
+.ready-collaborate-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 5px 10px rgba(255, 0, 0, 0.6);
+}
+/* GitHub Button */
+.github-link {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #000; /* Black background for better contrast */
+    padding: 10px; /* Reduced padding to keep proportions */
+    border-radius: 50%; /* Ensures circular shape */
+    transition: all 0.3s ease-in-out; /* Smooth hover and active effects */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+.github-link i {
+    color: #fff; /* White icon color for contrast */
+    font-size: 24px; /* Smaller icon size */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transform and color change */
+}
+
+/* Hover effect */
+.github-link:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+}
+
+.github-link:hover i {
+    color: #ff0000; /* Bright red icon on hover */
+    transform: rotate(360deg) scale(1.2); /* Rotate and slightly enlarge */
+}
+
+/* Active effect with pulse */
+.github-link:active {
+    animation: pulse 0.6s ease-out;
+}
+
+/* Keyframes for pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
 
 /*----about-----*/
 
@@ -663,6 +777,7 @@ nav ul li a:hover::after {
         flex-wrap: wrap; /* Wrap the items if necessary */
         padding: 0; /* Remove any padding */
         margin: 0;
+        
     }
 
     #navList li {
